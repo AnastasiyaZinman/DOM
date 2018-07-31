@@ -1,0 +1,24 @@
+<!-- <button id='btn'>Click Me</button>
+<script type="text/javascript">
+document.getElementById('btn').onclick = function() {
+    alert("You clicked me");
+}
+</script> -->
+<button id='btn' onclick='clickHandler();'>Click Me</button>
+
+<script type="text/javascript">
+var clickHandler = function() {
+    alert("You clicked me");}
+
+    var par=document.createElement('p');
+    //par.id='New';
+    var textnode = document.createTextNode("Hello world!");
+    par.appendChild(textnode);
+// par.onmouseover = function(){
+//    alert("Works!");
+//     par.innerHTML="New Text in the paragraph!";
+// }
+
+
+</script>
+<button onclick='alert("You clicked me");'>Click Me</button>

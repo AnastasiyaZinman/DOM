@@ -1,0 +1,79 @@
+        <form>
+            <div id="message">   </div>
+                Username:
+                <input id="username" type="text" placeholder="Your Name">
+                <br> Email:
+                <input type="e-mail" placeholder="yourname@email.com">
+                <br> Password:
+                <input id="password_1" type="password">
+                <br> Repeat password:
+                <input id="password_2" type="password">
+                <br> Phone Number:
+                <input id="phone_num" type="number">
+                <br> Country:
+                <input id="country" type="text">
+                <br>
+                <button type="button" onclick="submitForm();">Submit</button>
+            </form>
+          <script type="text/javascript">
+          function submitForm(){
+            var username=document.getElementById("username").value,
+            password_1=document.getElementById("password_1").value,
+            password_2=document.getElementById("password_2").value,
+            country=document.getElementById("country").value,
+            phone_num=document.getElementById("phone_num").value,
+            errors=0;
+            var message = document.getElementById('message');
+            var attr = document.createAttribute("style");
+            //Checking username
+            if (username==='') {document.getElementById("message").innerHTML+="Empty name!";
+            errors+=1;}
+            else if (username.length<=5) 
+            {   errors+=1;
+                document.getElementById("message").innerHTML+="username must be over 5 characters"+'<br />';}
+            else {
+                document.getElementById('message').innerHTML ='';};
+            //    alert("Thank you, "+username);}
+            //Checking password
+            if (password_1==='') {
+            document.getElementById("message").innerHTML+="Empty password"+ '<br />';
+            errors+=1;}
+            else if (password_1.length<6) 
+            {errors+=1;
+            document.getElementById("message").innerHTML+="Password must be at least 6 characters long"+'<br />';}
+            else {
+                document.getElementById('message').innerHTML ='';}
+            //   alert("Thank you, "+username+" Password is entered correct");}
+            //Checking equal passwords
+            if ((password_1!==password_2)||(!password_1)||(!password_2)) 
+            { errors+=1;
+            document.getElementById("message").innerHTML+="Password isn't confirmed"+'<br />';};
+            // else {alert("Thank you, "+username+" Password is confirmed");}
+            // Checking phone number
+            if (phone_num==='') {errors+=1;
+            document.getElementById("message").innerHTML+="Empty phone number"+ '<br />';}
+            else if (phone_num.length<15) 
+            {errors+=1;
+            document.getElementById("message").innerHTML+="Phone number must be at least 15 characters long"+'<br />';}
+            else {
+                document.getElementById('message').innerHTML =' ';};
+            // alert("Thank you, "+username+" Phone number is entered correct");}
+            //Checking country 
+            if (country==='') 
+            { errors+=1;
+            document.getElementById("message").innerHTML+="Country isn't entered"+'<br />';}
+            else if((country.toUpperCase()!=="ISRAEL") && (country.toUpperCase()!=="USA"))
+            {errors+=1;
+            document.getElementById("message").innerHTML+="Country isn't USA or Israel"+'<br />';};
+            //else {alert("Thank you, "+username+" Country is correct");}
+           
+            if (errors===0) 
+            { 
+              attr.value = "border: 2px solid green";
+              message.attributes.setNamedItem(attr);
+              message.innerHTML="GREAT, "+username + "!";}
+            else {attr.value = "border: 2px solid red";
+              message.attributes.setNamedItem(attr);}
+        
+        }
+          </script>

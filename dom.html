@@ -1,0 +1,29 @@
+<div id="container"></div>
+---------------
+<div id="new_container"></div>
+<div id="f_b"></div>
+
+<script>
+  var contr = document.getElementById("container");
+  contr.innerHTML = "New Content!";
+  var para = document.createElement("p");
+  para.innerHTML="I am a new paragraph";
+  contr.appendChild(para);
+  var br = document.createElement('br');
+  
+  //document.getElementById("container").appendChild(para);
+  var textnode = document.createTextNode("Hello world!");
+ //para.innerHTML+='<br>'+ textnode;
+  para.appendChild(br);
+  para.appendChild(textnode);
+  //-------------------------------------------
+  
+  var parag = document.createElement("p");
+  var textnode_1 = document.createTextNode("Hello world!");
+  parag.appendChild(textnode_1);
+  document.getElementById("new_container").appendChild(parag);
+  var btn = document.createElement('button');
+  var text = document.createTextNode("Click Me!");
+  btn.appendChild(text);
+  document.getElementById("f_b").appendChild(btn);
+</script>

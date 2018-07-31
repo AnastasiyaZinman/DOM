@@ -1,0 +1,18 @@
+<ol id="mylist" onclick="appendItem();">
+        <li name="1">A list item</li>
+    </ul>
+    <script>
+    function appendItem() {
+        var list = document.getElementById("mylist");
+        var li_num = list.lastElementChild.getAttribute("name");
+        var nodetext = document.createTextNode("Another list item");
+        var item = document.createElement('li');
+        var attr=document.createAttribute("name");
+        num=parseInt(li_num)+1;
+        console.log(num);
+        attr.value=num;
+        item.attributes.setNamedItem(attr);
+        item.appendChild(nodetext);
+        list.appendChild(item);
+    }
+    </script>

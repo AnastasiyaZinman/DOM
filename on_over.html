@@ -1,0 +1,26 @@
+<div id="conteiner"></div>
+<script type="text/javascript">
+    var par=document.createElement('p');
+    par.id='New';
+    var textnode = document.createTextNode("Hello world!");
+    par.appendChild(textnode);
+    document.getElementById("conteiner").appendChild(par);
+    
+    document.getElementById("New").onmouseover = function(){
+    par.innerHTML="New Text in the paragraph!";
+    }
+    
+    document.getElementById("New").onmouseleave = function(){
+    par.innerHTML="Hello world!";
+    }
+</script>    
+
+<!--<p id='para1' onmouseenter="onenter();" onmouseleave="onleave();"> Hover Over Me</p>
+<script type="text/javascript">
+var onenter = function() {
+    document.getElementById('para1').innerHTML = "Thank You!";
+}
+var onleave = function() {
+    document.getElementById('para1').innerHTML = "Hover Over Me!";
+}
+</script>-->

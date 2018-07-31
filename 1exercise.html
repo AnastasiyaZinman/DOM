@@ -1,0 +1,13 @@
+<p id="text_ch">Good day!</p>
+<button id='btn' onclick='clickHandler();'>Click Me</button>
+
+<script type="text/javascript">
+var clickHandler = function() {
+//  var textnode = document.createTextNode();
+var paragraph=document.getElementById("text_ch").innerHTML;
+console.log(paragraph);
+if(paragraph=="Good day!")
+{document.getElementById("text_ch").innerHTML="Good night!"; }
+else {document.getElementById("text_ch").innerHTML="Good day!";}
+}
+</script>
